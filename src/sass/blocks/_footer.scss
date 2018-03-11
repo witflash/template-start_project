@@ -1,0 +1,131 @@
+.footer {
+	position: relative;
+	text-align: center;
+
+	&__top {
+		position: relative;
+		padding-bottom: 5em;
+		background-color: $color-grad-end;
+		background: linear-gradient(to right, $color-grad-start, $color-grad-end);
+		transition-duration: $delay-global;
+
+		@include tablet {
+			padding-bottom: 7em;
+		}
+
+		@include desktop {
+			padding-bottom: 8em;
+		}
+	}
+
+	&__wave {
+		position: absolute;
+		left: 0;
+        width: 100%;
+        height: 50px;
+    }
+
+    &__wave_updown {
+        transform: rotate(180deg);
+    }
+
+    &__wave_bottom {
+		bottom: 0;
+    }
+
+	&__title {
+		margin: 0 auto;
+		padding: 5em 1em 2em 1em;
+		max-width: 18em;
+		font-family: $font-secondary;
+		font-size: $font-title * 0.8;
+		color: $color-text-secondary;
+		transition-duration: $delay-global;		
+		
+		@include phablet {
+			padding: 6em 1em 1.5em 1em;
+		}
+		
+		@include tablet {
+			padding: 6em 2em 1.5em 2em;
+			font-size: $font-title * 0.9;
+		}
+
+		@include desktop {
+			font-size: $font-title;
+		}
+	}
+
+	&__button {
+		display: inline-block;
+	}
+
+	&__slick {
+        position: absolute;
+        transform: translate(50%, -50%);
+        right: 50%;
+		max-width: 1080px;
+		z-index: 1;
+	}
+	
+	&__bottom {
+		padding: 0.5em 1em;
+		background-color: $color-footer;
+
+		font-size: 0.9em;
+		color: $color-text-secondary;
+
+		transition-duration: $delay-global;		
+
+		@include phablet {
+			font-size: 1em;
+		}
+
+		@include tablet {
+			padding: 2em;
+		}
+
+		@include desktop {
+			padding: 3em;
+		}
+	}
+	
+	&__links {
+		margin-bottom: 0.5em;
+		
+		@include tablet {
+			margin-bottom: 1em;
+		}
+
+		@include desktop {
+			margin-bottom: 1.5em;
+		}
+	}
+
+	&__link {
+		display: inline-block;
+		margin-right: 3em;
+		font-size: 0.9em;
+		color: inherit;
+		transition-duration: $delay-global;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		@include desktop {
+			margin-right: 6em;
+		}
+
+		&:hover {
+			color: $color-accent;
+			text-decoration: none;
+		}
+	}
+
+	&__copyright {
+		margin: 0;
+		font-size: 0.65em;
+		transition-duration: $delay-global;		
+	}
+}

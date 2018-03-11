@@ -1,0 +1,28 @@
+/* FONT VARIABLES */
+$font-primary: 'Open Sans Light', sans-serif;
+$font-secondary: 'Clear Sans Bold', sans-serif;
+
+$font-main:     18px;
+$font-title:    40px;
+$font-subtitle: 20px;
+$font-small:    12px;
+
+/* COLOR VARIABLES */
+$color-text-main:       #3b3b3b;
+$color-text-secondary:  #ffffff;
+$color-text-form:       #9d9d9c;
+$color-primary:         #3f82f0;
+$color-secondary:       #0099df;
+$color-accent: 			#124fb3;
+$color-footer:          #182a53;
+$color-grad-start:      #084a7c;
+$color-grad-end:        #2ba3c3;
+$color-alarm:           #e60000;
+
+/* TRANSITIONS AND ANIMATIONS */
+$delay-global: 300ms;
+
+/* BREAKPOINTS */
+$phablet-width: '578px';
+$tablet-width: '768px';
+$desktop-width: '1024px';
