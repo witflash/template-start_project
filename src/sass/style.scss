@@ -1,4 +1,10 @@
 @import 'helpers/all';
 
-@import 'page';
-@import 'blocks/all';
+@import 'root';
+
+@import 'section/header';
+@import 'section/main';
+@import 'section/footer';
+
+@import 'components/button';
+@import 'components/form';
