@@ -4,6 +4,7 @@ const config = {
   src: {
     root: 'src',
     sass: 'src/sass',
+    css: 'src/css',
     html: 'src/html',
     js: 'src/js',
     img: 'src/img',

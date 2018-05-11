@@ -1,29 +1,3 @@
 .button {
-	padding: 0.7em;
-	box-sizing: border-box;
-	background-color: $color-secondary;
-	border: none;
-	border-radius: 5px;
-	box-shadow: 2px 3px 22px 2px rgba(0, 0, 0, 0.2);
 
-	font-family: $font-secondary;
-	font-size: $font-main;
-	color: $color-text-secondary;
-	text-decoration: none;
-
-	transition-duration: $delay-global;
-
-	&:focus {
-		outline: none;
-	}
-
-	&:hover {
-		cursor: pointer;
-		background-color: $color-accent;
-	}
-
-	&_apply {
-		padding-left: 4em;
-		padding-right: 4em;
-	}
 }
