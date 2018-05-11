@@ -1,18 +1,8 @@
-const config = {
-  src: {
-    root: 'src',
-    sass: 'src/sass',
-    html: 'src/templates',
-    js: 'src/js',
-    img: 'src/img',
-  },
-  dest: {
-    root: 'dist',
-    css: 'dist/css',
-    js: 'dist/js',
-    img: 'dist/img',
-  },
-};
+require('require-dir')('./gulp/tasks', {recurse: true});
+
+
+
+
 
 // import modules
 const gulp = require('gulp');
@@ -26,12 +16,10 @@ const del = require('del');
 const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
 const autoprefixer = require('gulp-autoprefixer');
-const nunjucks = require('gulp-nunjucks');
+// const nunjucks = require('gulp-nunjucks');
 
 
-gulp.task('nunjucks', () => gulp.src(`${config.src.html}/**/[^_]*.html`)
-  .pipe(nunjucks.compile())
-  .pipe(gulp.dest(config.dest.root)));
+
 
 gulp.task('sass', () => gulp.src(`${config.src.root}/**/*.scss`)
   .pipe(scss().on('error', sass.logError))
@@ -70,11 +58,12 @@ gulp.task('browser-sync', () => browserSync({
 
 gulp.task('clean', () => del.sync(config.dest.root));
 
-gulp.task('default', ['browser-sync', 'nunjucks', 'scss', 'js', 'img'], () =>
+gulp.task('default', ['browser-sync', 'nunjucks', 'scss', 'js', 'img'], () => {
   gulp.watch(config.src.html + '**/*.html', ['nunjucks', browserSync.reload]);
   gulp.watch(config.src.sass + '**/*.scss', ['scss', browserSync.reload]);
   gulp.watch(config.src.js + '**/*.js', ['js', browserSync.reload]);
-  gulp.watch(config.src.img + '**/*.*', ['img', browserSync.reload]););
+  gulp.watch(config.src.img + '**/*.*', ['img', browserSync.reload]);
+});
 
 gulp.task('build', ['clean', 'nunjucks', 'scss', 'img', 'css-min', 'js', 'uglify'], () => {
   return
