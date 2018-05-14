@@ -8,7 +8,7 @@ const server = require('./server');
 
 gulp.task('sass', () => {
   gulp
-    .src(`${config.src.root}/**/*.scss`)
+    .src(`${config.src.sass}/**/*.scss`)
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer(['last 2 versions'], { cascade: true }))
     .pipe(gulp.dest(config.src.css));
