@@ -4,6 +4,7 @@ const nunjucks = require('gulp-nunjucks');
 const plumber = require('gulp-plumber');
 const replace = require('gulp-replace-task');
 const prettify = require('gulp-prettify');
+const server = require('./server');
 
 gulp.task('nunjucks', () => {
   gulp
@@ -21,7 +22,7 @@ gulp.task('nunjucks', () => {
 });
 
 gulp.task('nunjucks:watch', () => {
-  gulp.watch([`${config.src.html}/**/[^_]*.html`], ['nunjucks']);
+  gulp.watch([`${config.src.html}/**/*.html`], ['nunjucks', server.reload]);
 });
 
 gulp.task('nunjucks:build', () => {

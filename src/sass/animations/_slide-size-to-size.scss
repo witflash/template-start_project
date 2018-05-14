@@ -1,0 +1,11 @@
+@keyframes slide-left-to-right {
+  0% {
+    left: -150%;
+  }
+  75% {
+    left: 10%;
+  }
+  100% {
+    left: 0;
+  }
+}

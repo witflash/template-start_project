@@ -4,6 +4,7 @@ const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
 const rename = require('gulp-rename');
+const server = require('./server');
 
 gulp.task('sass', () => {
   gulp
@@ -14,7 +15,7 @@ gulp.task('sass', () => {
 });
 
 gulp.task('sass:watch', () => {
-  gulp.watch(`${config.src.sass}/**/*.+(scss|sass)`, ['sass']);
+  gulp.watch(`${config.src.sass}/**/*.+(scss|sass)`, ['sass', server.reload]);
 });
 
 gulp.task('sass:build', () => {
